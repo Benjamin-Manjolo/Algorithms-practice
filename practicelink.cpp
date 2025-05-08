@@ -165,61 +165,64 @@ int main(){
    int key1,k1,data1;
    do
    {
-    cout <<"\n what operation do you want want to perform? select option number enter 0 to exit"    <<endl;
-    cout <<"1. appendNode()"   <<endl;
-    cout <<"2.prependNode()"  <<endl;
-    cout <<"3.insertNodeAfter()" <<endl;
-    cout <<"4.deleteNodeByKey()"<<endl;
-    cout <<"5.updateNodeByKey()" <<endl;
-    cout <<"6.print()"<<endl;
-    cout << "7. Clear screen"  <<endl;
+    cout <<"\nWhat operation do you want to perform? Select option number (enter 0 to exit):" << endl;
+    cout <<"1. appendNode()" << endl;
+    cout <<"2. prependNode()" << endl;
+    cout <<"3. insertNodeAfter()" << endl;
+    cout <<"4. deleteNodeByKey()" << endl;
+    cout <<"5. updateNodeByKey()" << endl;
+    cout <<"6. print()" << endl;
+    cout <<"7. Clear screen" << endl;
 
     cin >> option;
-    Node* n1 =new Node();
+    Node* n1 = new Node();
     switch(option){
         case 0:
             break;
         case 1:
-           cout<<"Append node operation /n enter key and data of the node to be appendes";
-        cin >>key1;
-        cin >>data1;
-        n1->key=key1;
-        n1->data=data1;
-        s.appendNode(n1);
-        break;
-         case 2:
-           cout<<"prepend node operation /n enter key and data of the node to be appendes";
-        cin >>key1;
-        cin >>data1;
-        n1->key=key1;
-        n1->data=data1;
-        s.prependNode(n1);
-        break; 
+            cout << "Append node operation\nEnter key and data of the node to be appended: ";
+            cin >> key1 >> data1;
+            n1->key = key1;
+            n1->data = data1;
+            s.appendNode(n1);
+            break;
+        case 2:
+            cout << "Prepend node operation\nEnter key and data of the node to be prepended: ";
+            cin >> key1 >> data1;
+            n1->key = key1;
+            n1->data = data1;
+            s.prependNode(n1);
+            break;
         case 3:
-        cout<<"insert node operation /n enter key and data of the node to be appendes";
-        cin >>key1;
-        cin >>data1;
-        n1->key=key1;
-        n1->data=data1;
-        s.insertNodeAfter(k1,n1);
-        break;
+            cout << "Insert node operation\nEnter key and data of the node to be inserted: ";
+            cin >> key1 >> data1;
+            cout << "Enter key of the node after which to insert: ";
+            cin >> k1;
+            n1->key = key1;
+            n1->data = data1;
+            s.insertNodeAfter(k1, n1);
+            break;
         case 4:
-        cout<<"delete node operation /n enter key and data of the node to be appendes";
-        cin >>k1;
-        s.deleteNodeByKey(k1);
-        break; 
+            cout << "Delete node operation\nEnter key of the node to be deleted: ";
+            cin >> k1;
+            s.deleteNodeByKey(k1);
+            break;
         case 5:
-           cout<<"update node operation /n enter key and data of the node to be appendes";
-        cin >>key1;
-        cin >>data1;
-        s.updateNodeByKey(key1,data1);
-        break;
+            cout << "Update node operation\nEnter key and new data of the node to be updated: ";
+            cin >> key1 >> data1;
+            s.updateNodeByKey(key1, data1);
+            break;
         case 6:
-        cout<<"printlist node operation /n enter key and data of the node to be appendes";
-        s.printList();
-        break;
+            cout << "Print list operation\n";
+            s.printList();
+            break;
+        case 7:
+            system("cls");
+            break;
+        default:
+            cout << "Enter a proper option number\n";
     }
-   } while (true);
+   } while (option != 0);
    
 
 
